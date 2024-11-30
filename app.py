@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import requests
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # URLs externas
 MENU_URL = 'https://menu-yqkj.onrender.com/menu'
