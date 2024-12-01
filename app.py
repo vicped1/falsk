@@ -38,8 +38,8 @@ def criar_pedido():
             return jsonify({"error": "cliente_id e sabor_id são obrigatórios"}), 400
 
         # Obter dados dos microsserviços
-        clientes = requests.get(URL_CLIENTES).json()
-        sabores = requests.get(URL_SABORES).json()
+        clientes = requests.get(CLIENTES_GET_URL).json()
+        sabores = requests.get(MENU_URL).json()
 
         # Validar cliente
         cliente = next((c for c in clientes if clientes.index(c) + 1 == cliente_id), None)
@@ -133,5 +133,5 @@ def criar_cliente():
 
 
 
-if __name__ == "_main_":
+if __name__ == "main":
     app.run(debug=True)
